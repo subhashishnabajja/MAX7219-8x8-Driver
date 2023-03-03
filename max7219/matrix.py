@@ -1,6 +1,6 @@
 import spidev
 from time import sleep
-import font
+import max7219.font as font
 
 
 
@@ -23,7 +23,7 @@ class LedMatrix:
         self.spi.open(open, port)
 
         # Configure spi
-        self.spi.max_speed_hz = toMhz(8)
+        self.spi.max_speed_hz = toMhz(6)
 
         
 
@@ -38,7 +38,7 @@ class LedMatrix:
         self.DECODE_MODE_REGISTER()
 
         # Set scan limit 
-        self.SCAN_LIMIT_REGISTER(0x07)
+        self.SCAN_LIMIT_REGISTER(0x01)
 
         self.CLEAR_DISPLAY()
 
@@ -75,26 +75,14 @@ class LedMatrix:
         for char in  string:
             if char == " ":
                 self.CLEAR_DISPLAY()
-            else:
+            else:    
                 self.setBitmap(font.fonts[char])
-                sleep(delay)
+
+            sleep(delay)
 
     def close(self):
+
         return self.spi.close()
 
 
 
-
-try:
-    mat = LedMatrix(0, 0)
-    mat.bootstrap()
-    mat.show("HELLO WORLD", delay = 1)
-
-    mat.CLEAR_DISPLAY()
-
-   
-
-
-
-finally:
-    mat.close()
