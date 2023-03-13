@@ -2,6 +2,14 @@
 
 This repository contains the code required to drive a max7219 8x8 LED matrix using a Raspberry Pi (with `spidev`). **The code written is extremely rigid and should not be used in any form of production applications**.
 
+## Pypi Link
+
+<a href="https://pypi.org/project/max7219-driver/0.0.1/" target="_blank">PyPi Package Link</a>    
+
+## Installation
+
+    pip install max7219-driver
+
 ## Connections
 
 The following are the table lists the connetion
