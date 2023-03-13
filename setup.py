@@ -12,7 +12,7 @@ def read_description():
         return contents.strip()
     
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 DESCRIPTION = 'This Package contains the code required to drive a max7219 8x8 LED matrix using a Raspberry Pi (with `spidev`).'
 
 # Setting up
