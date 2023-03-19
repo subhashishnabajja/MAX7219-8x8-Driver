@@ -16,6 +16,8 @@ The following are the table lists the connetion
 
 | LED | Physical Pin (Raspberry Pi)  |
 |-----|------------------------------|
+| VCC| 2 or 4|
+| GND| 6|
 | DIN| 19|
 | CLK| 23|
 | CS | 24|
